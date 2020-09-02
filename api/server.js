@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const helmet = require("helmet");
+const cors = require("cors");
 // require("dotenv").config();
 // const nodemailer = require("nodemailer");
 
@@ -11,6 +12,7 @@ const server = express();
 server.use(helmet());
 server.use(express.json());
 server.use(morgan("dev"));
+server.use(cors());
 
 server.use("/api/mailer", mailerRouter);
 
